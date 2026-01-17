@@ -22,7 +22,6 @@ function Shortener() {
     try {
       setLoading(true);
       const res = await createShortUrl(url);
-      await new Promise(resolve => setTimeout(resolve, 1000));
 
       setShortUrl(res.data.shortUrl || res.data.id || res.data.error);
     } catch (err) {
@@ -67,7 +66,7 @@ function Shortener() {
       {shortUrl && (
         <div className="result">
           <p>
-            Short URL:  {' '} 
+            URL:  {' '} 
             <a href={shortUrl} target="_blank" rel="noopener noreferrer">
               {shortUrl}
             </a>
