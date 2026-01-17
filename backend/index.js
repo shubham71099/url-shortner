@@ -15,7 +15,8 @@ connectDB(mongoUrl)
 
 app.use(express.json());
 app.use(cors({
-  origin: frontendUrl
+  // origin: frontendUrl
+  origin: "*"
 }));
 
 app.use('/', urlRouter);
