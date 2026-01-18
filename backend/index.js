@@ -21,6 +21,10 @@ app.use(cors({
 
 app.use('/', urlRouter);
 
+app.get('/api/health', (req, res) => {
+  return res.status(200).json({ message: 'api is up' });
+});
+
 app.listen(port, () => {
   console.log(`Server is running on PORT:${port}`);
 });
